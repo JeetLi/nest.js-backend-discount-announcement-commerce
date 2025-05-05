@@ -7,18 +7,30 @@ import {
 } from 'typeorm';
 
 @Entity()
-export class User {
+export class Product {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column()
   name: string;
 
-  @Column({ unique: true })
-  email: string;
+  @Column()
+  description: string;
 
   @Column()
-  password: string;
+  price_new: number;
+
+  @Column()
+  price_old: number;
+
+  @Column()
+  price_per_kg: number;
+
+  @Column()
+  image: string;
+
+  @Column()
+  url: string;
 
   @CreateDateColumn()
   createdAt: Date;
